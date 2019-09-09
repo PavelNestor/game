@@ -1,0 +1,17 @@
+block vars
+	- var title = "game"
+
+block content
+	.container#content
+		.content
+			include go-back
+			include pagination
+			include publication
+			include comments-list
+		
+		.news 
+			.news__title Related News
+			.news__card-wrap
+				include card
+				include card
+				include card

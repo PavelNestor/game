@@ -1,0 +1,208 @@
+//----------------------------------
+// Default navbar
+//----------------------------------
+$primary: #242333
+$gradientBtn-start: #6e31c6
+$gradientBtn-end: #ea4bd9
+$gradient-start: $primary
+$gradient-end: #3c3b53
+$gray: rgba(255, 255, 255, 0.46)
+$white: #ffffff
+
+.navbar
+  align-items: center
+  background-color: $primary
+  display: flex
+  font-family: "Geomanist-Book"
+  height: 10.3rem
+  justify-content: center
+  position: fixed
+  width: 100%
+  z-index: 999
+
+  .menu-sm
+    background: url(/img/menu-icon.png) center center no-repeat
+    cursor: pointer
+    display: none
+    height: 55px
+    left: 0
+    position: absolute
+    width: 55px
+    
+    &:hover
+      filter: brightness(0) invert(1)
+
+    @media #{$media-sm-plus-down:}
+      display: block
+      margin-left: 12px
+
+  &__icon
+    margin-left: -15px
+    margin-top: 10px
+
+  &__nav
+    align-items: center
+    display: flex
+    flex: 0 0 65%
+    justify-content: flex-end
+
+    @media #{$media-sm-plus-down:}
+      display: none
+      transform: translate(0px, -100px)
+
+  &__nav-item
+    color: $white
+    font-size: 1.4rem
+    letter-spacing: 1.13px
+    padding-left: 3.5rem
+    padding-right: 3.5rem
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.1)
+    text-transform: capitalize
+
+    &:hover
+      color: $gradientBtn-end
+
+    @media #{$media-sm-plus-down:}
+      padding: 4.2rem 3.4rem
+      text-align: center
+      width: 100%
+  
+    &_play
+      align-items: center
+      background-image: linear-gradient(to right, #6f6d99 0%, #9c99cb 100%)
+      border-radius: 21px
+      display: flex
+      justify-content: center
+      padding: 0.2rem
+     
+      &:hover
+        background-image: linear-gradient(to right, $gradientBtn-start 0%, $gradientBtn-end 100%)
+
+      &_bg
+        background-image: linear-gradient(to right, $gradient-start 0%, #3c3b53 100%)
+        border-radius: 21px
+        border: 2px solid $primary
+        padding: 1.3rem 3.8rem
+
+
+    &_active
+      background-image: linear-gradient(to bottom, $gradient-start 0%, #3c3b53 100%)
+      padding: 4.2rem 3.4rem
+      position: relative
+
+      &::after
+        background-image: linear-gradient(to right, $gradientBtn-start 0%, $gradientBtn-end 100%)
+        bottom: 0
+        content: ""
+        height: 2px
+        left: 0
+        position: absolute
+        right: 0
+
+  &__user-info
+    align-items: center
+    display: flex
+    justify-content: flex-end
+    width: 100%
+
+    &-item
+      height: 3.8rem
+      margin-right: 3.8rem
+      width: 3.8rem
+
+      @media #{$media-xs}
+        margin-right: 1rem
+
+      &_achievement
+        &:hover
+          filter: brightness(0) invert(1)
+
+      &_notification
+        &:hover
+          filter: brightness(0) invert(1)
+
+      &_point
+        background-image: linear-gradient(to right, $gradientBtn-start 0%, $gradientBtn-end 100%)
+        border-radius: 2rem
+        display: flex
+        justify-content: center
+        margin-right: 2rem
+        min-width: 8rem
+        padding: 0.2rem
+
+        @media #{$media-xs}
+          margin-right: 1rem
+
+        &-btn
+          align-items: center
+          background: url(/img/icons/bg_btn_user.png) -12px
+          background-color: #343247
+          border-radius: 2rem
+          color: #cecbff
+          display: flex
+          font-size: 1.4rem
+          justify-content: center
+          width: 100%
+
+          &:hover
+            background: url(/img/icons/bg_btn_user.png) -13px -30px
+            background-color: #343247
+            transition: .3s
+
+          &_white
+            color: $white
+          
+      &_user
+        background-image: linear-gradient(to right, $gradient-start 0%, $gradient-end 100%)
+        box-shadow: 0 0 0px 2px $gray
+        border-radius: 50%
+        margin-right: 2rem
+
+        &:hover 
+          box-shadow: 0 0 0px 2px $gradientBtn-end
+
+      &_avatar
+        border-radius: 50%
+
+  .menu-show
+    align-items: flex-start
+    animation: slide .1s ease
+    background: $primary
+    border-top: 2px solid rebeccapurple
+    display: flex
+    flex-direction: column
+    height: 100vh
+    justify-content: flex-start
+    left: 0
+    position: absolute
+    top: 203px
+    width: 100vw
+
+  &__link
+    position: relative
+  
+  &__indicator
+    border-radius: 50%
+    height: 10px
+    position: absolute
+    left: 25px;
+    top: 0
+    width: 10px
+
+    &_notification
+      background-color: #48d496
+      border: 4px solid #48d49669
+      box-shadow: 0 0 10px #48d496, 0 0 0px 5px #242419
+
+    &_achievement
+      background-color: #9e3dc7
+      border: 4px solid #9e3dc7
+      box-shadow: 0 0 10px #9e3dc7, 0 0 0px 5px #242419
+
+@keyframes slide
+  0%
+    transform: scaleY(0)
+    opacity: 0
+  100%
+    transform: scaleY(1)
+    opacity: 1

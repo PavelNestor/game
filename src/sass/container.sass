@@ -1,0 +1,51 @@
+.container
+  background: url(/img/main-bg.png) 50% 50% no-repeat
+  background-position: top
+  background-color: #323145
+  display: flex
+  min-height: 100vh
+  padding: 0 2rem
+  padding-top: 14.5rem
+  position: relative
+  top: -1rem
+  width: 100%
+  z-index: 0
+
+  @media #{$media-lg}
+    flex-direction: column
+
+  @media #{$media-sm}
+    padding-top: 11.5rem;
+  
+  .content
+    flex: 0 0 66%
+    padding-right: 35px
+
+    @media #{$media-lg}
+      padding-right: 0
+
+  .news
+    width: 100%
+
+    &__title
+      color: #ffffff
+      font-size: 1.8rem
+      letter-spacing: 0.72px
+      margin-bottom: 3.5rem
+
+      @media #{$media-sm}
+        margin-bottom: 0.5rem
+
+    &__card-wrap
+      @media #{$media-lg}
+        display: flex
+        justify-content: space-between
+        
+      @media #{$media-sm}
+        align-items: center
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+  
+.close-content
+  display: none

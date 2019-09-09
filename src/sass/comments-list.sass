@@ -1,0 +1,145 @@
+$primary: #9d9acc
+$secondary: #2a293b
+$primary-opacity: #9d9acc3d
+$white: #ffffff
+$gradient-start: #d94fc7
+$gradient-end: #ff905a
+  
+.comment
+  background-color: rgb(36, 35, 51)
+  border-radius: 1.5rem
+  color: $primary
+  font-size: 1.6rem
+  margin-bottom: 2rem
+  padding: 2.5rem
+  width: 100%
+
+  &__header
+    border-bottom: 0.2rem solid $primary-opacity
+    display: flex
+    justify-content: space-between
+    padding: 0px 3rem 2.2rem
+    position: relative
+    right: 2.5rem
+    width: calc(100% + 5rem)
+
+    @media #{$media-sm}
+      flex-direction: column
+      align-items: center
+
+    &-comments
+
+      &-wrap
+        letter-spacing: 0.72px
+
+      &-icon
+        margin-right: 20px
+
+      &-span
+        color: $white
+    
+    &-btn
+      color: $primary
+
+      &-item
+        color: $primary
+        font-size: 1.6rem
+        padding: 3.1rem 2.5rem
+        
+        &:hover
+          color: $gradient-start
+
+
+      &_active
+        color: $white
+        outline-color: $white
+        position: relative
+        
+        &::after
+          background-image: linear-gradient(to right, $gradient-start 0%, $gradient-end 100%)
+          bottom: -2px
+          content: ""
+          height: 2px
+          left: 0
+          position: absolute
+          right: 0
+
+  &__body
+    padding-top: 28px
+
+    &-input
+      background-color: $secondary
+      border-radius: 5px
+      border: 0
+      color: $primary
+      font-size: 16px
+      height: 62px
+      margin-bottom: 20px
+      padding-left: 27px
+      width: 100%
+
+      @media #{$media-sm}
+        padding-left: 10px
+
+
+      &::placeholder
+        color: $primary
+        font-size: 16px
+    
+    &-submit
+      background-color: transparent
+      background: url(/img/icons/right-arrow.png) center center no-repeat
+      border: 0
+      cursor: pointer
+      filter: invert(1)
+      position: absolute
+      right: 30px
+      top: 22px
+      width: 40px
+      
+      &:hover
+        right: 10px
+
+      @media #{$media-sm}
+        right: 5px
+
+        &:hover
+          right: 5px
+
+    &-form
+      position: relative
+    
+    &-comment
+      align-items: flex-start
+      border-bottom: 2px solid $secondary
+      display: flex
+      margin-top: 18px
+      padding-bottom: 23px
+
+      &-avatar
+        border-radius: 50%
+        height: 60px
+        margin-right: 17px
+        width: 60px
+    
+    &-title
+      display: flex
+      margin-bottom: 23px
+      margin-bottom: 3px
+
+    &-name-user
+      font-size: 18px
+      letter-spacing: 0.72px
+      line-height: 40px
+      margin-right: 13px
+
+    &-date
+      color: $primary
+      line-height: 40px
+      opacity: 0.5
+    
+    &-text
+      color: $white
+      font-size: 14px
+      letter-spacing: 0.56px
+      line-height: 24px
